@@ -19,7 +19,7 @@ from streamlit import session_state
 uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.", type='odt', accept_multiple_files=False, key="up1")
 
 if uploaded_file is not None:
-	df = pd.read_excel(fname, header=None)
+	df = pd.read_excel(uploaded_file, header=None)
 	st.dataframe(df)
 
 
