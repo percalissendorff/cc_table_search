@@ -16,7 +16,7 @@ from streamlit import session_state
 # Define files
 
 #fname = '/home/per/Dropbox/Blandat/test_document_for_pancakedevil_onecol.odt'
-fname = st.file_uploader(label, type='odf', accept_multiple_files=False)
+fname = st.file_uploader("Upload your table here, should be .odf file for now.", type='odf', accept_multiple_files=False, key="up1")
 
 
 df = pd.read_excel(fname, engine='odf', header=None)
