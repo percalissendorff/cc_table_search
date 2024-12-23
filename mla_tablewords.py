@@ -109,7 +109,7 @@ for i in range(0, len(qids)-1):
 
 # Display the results
 for key, val in flagged.items():
-	st.write((key, ":", val)
+	st.write(key, ":", val)
 
 
 
