@@ -19,7 +19,7 @@ from streamlit import session_state
 fname = st.file_uploader("Upload your table here, should be .odf file for now.", type='xlsx', accept_multiple_files=False, key="up1")
 
 
-df = pd.read_excel(fname, engine='odf', header=None)
+df = pd.read_excel(fname, header=None)
 
 # Make dictionary 
 def search_answers(df):
