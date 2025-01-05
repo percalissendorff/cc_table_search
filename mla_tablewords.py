@@ -20,7 +20,8 @@ from streamlit import session_state
 # Define files
 
 #fname = '/home/per/Dropbox/Blandat/test_document_for_pancakedevil_onecol.odt'
-uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.", type='odt', accept_multiple_files=False, key="up1")
+uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.\
+	Testing to break Line for easier overview of Text!", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
 st.write("Uploaded file: "+fname)
