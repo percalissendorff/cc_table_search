@@ -30,13 +30,12 @@ if uploaded_file is not None:
 	if ".docx" in fname:
 		df = read_functions.read_docx(uploaded_file)
 	elif ".odt" in fname:
-		print("This is a print statemetn")
 		st.write("We made it this far")
 		df = pd.read_excel(uploaded_file, header=None)
 	elif ".pdf" in fname:
 		df = read_functions.read_pdf(uploaded_file)
 	else:
-		print("Unknown data format for input data table. Try Word (.docx) or OpenOffice (.odt).")
+		st.write("Unknown data format for input data table. Try Word (.docx) or OpenOffice (.odt).")
 
 	
 	#df = pd.read_excel(uploaded_file, header=None)
