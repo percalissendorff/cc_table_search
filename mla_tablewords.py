@@ -45,10 +45,11 @@ qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
 exception_file = st.file_uploader("Upload your exceptions here, or ignore for default.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
-ename = exception_file.name
-st.write("Uploaded exception file: ", ename)
 
 if uploaded_file:
+	ename = exception_file.name
+	st.write("Uploaded exception file: ", ename)
+	
 	# Read the file as bytes
 	file_contents = exception_file.read()
 
@@ -58,14 +59,14 @@ if uploaded_file:
 
 	# Decode the bytes to string (assuming UTF-8 encoding)
 	exceps = file_contents.decode("utf-8")
+	st.write("exceptions: ")
 
 else:		# Read defualt list of exceptions
+	st.write("Using default exceptions: ")
 	with open('default_exceptions.dat','r') as f:
 		exceps = [line.strip() for line in f]
 
-st.write("exceptions: ")
 st.write(exceps)
-
 
 # Save flagged words and id
 flagged_word = []
