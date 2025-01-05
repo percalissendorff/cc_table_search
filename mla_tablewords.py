@@ -65,8 +65,6 @@ else:		# Read defualt list of exceptions
 	st.write("Using default exceptions: ")
 	with open("default_exceptions.dat", 'r') as f:
 		exceps = f.read()
-	#with open('default_exceptions.dat','r') as f:
-		#exceps = [line.strip() for line in f]
 
 st.write(exceps)
 
