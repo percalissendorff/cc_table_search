@@ -2,4 +2,4 @@ streamlit
 pandas
 numpy
 pypdfium2
-docx
+python-docx
