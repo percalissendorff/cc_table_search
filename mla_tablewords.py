@@ -56,8 +56,8 @@ st.write("Uploaded exception file: ", ename)
 if exception_file:
 	st.write("Uploaded exception file: ", ename)
 	#st.write("Successfully uploaded exception file")
-	with open(exception_file,'r') as f:
-		exceps = [line.strip() for line in f]
+	#with open(exception_file,'r') as f:
+	exceps = [line.strip() for line in exception_file]
 else:
 	with open('default_exceptions.dat','r') as f:
 		exceps = [line.strip() for line in f]
