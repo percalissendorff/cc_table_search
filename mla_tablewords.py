@@ -22,6 +22,8 @@ from streamlit import session_state
 #fname = '/home/per/Dropbox/Blandat/test_document_for_pancakedevil_onecol.odt'
 uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.", type='odt', accept_multiple_files=False, key="up1")
 
+st.write(uploaded_file)
+
 if uploaded_file is not None:
 	# Read file
 	if ".docx" in uploaded_file:
@@ -41,7 +43,6 @@ if uploaded_file is not None:
 
 ########################################################################
 st.write("I am not in the if-loop")
-print("This print is outside the if-loop")
 
 
 
