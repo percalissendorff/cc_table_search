@@ -50,7 +50,7 @@ answers = read_functions.search_words(df)
 qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
-exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type='txt', accept_multiple_files=False, key="up2")
+exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type='txt, dat', accept_multiple_files=False, key="up2")
 if uploaded_file is not None:
 	with open(exception_file, 'r') as f:
 		exceps = [line.strip() for line in f]
