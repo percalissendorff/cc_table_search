@@ -55,8 +55,6 @@ ename = exception_file.name
 st.write("Uploaded exception file: ", ename)
 if exception_file:
 	st.write("Uploaded exception file: ", ename)
-	#with open(exception_file,'r') as f:
-	#exceps= [line.strip() for line in exception_file]
 if uploaded_file is not None:
 	# Read the file as bytes
 	file_contents = exception_file.read()
@@ -66,12 +64,9 @@ if uploaded_file is not None:
 		file_contents = file_contents[3:]  # Remove BOM
 
 	# Decode the bytes to string (assuming UTF-8 encoding)
-	text = file_contents.decode("utf-8")
+	exceps = file_contents.decode("utf-8")
 
-	st.write("File contents:")
-	st.text(text)
-	exceps = text
-else:
+else:		# Read defualt list of exceptions
 	with open('default_exceptions.dat','r') as f:
 		exceps = [line.strip() for line in f]
 
@@ -120,6 +115,7 @@ for i in range(0, len(qids)-1):
 
 
 # Display the results
+st.write("Flagged words and corresponding question IDs: ")
 for key, val in flagged.items():
 	st.write(key, ":", val)
 
