@@ -40,7 +40,7 @@ if uploaded_file is not None:
 
 ########################################################################
 
-
+sys.exit()
 
 # Collect all ID numbers and answers
 answers = read_functions.search_words(df)
