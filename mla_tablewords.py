@@ -30,21 +30,15 @@ if uploaded_file is not None:
 	if ".docx" in fname:
 		df = read_functions.read_docx(uploaded_file)
 	elif ".odt" in fname:
-		st.write("We made it this far")
 		df = pd.read_excel(uploaded_file, header=None)
 	elif ".pdf" in fname:
 		df = read_functions.read_pdf(uploaded_file)
 	else:
 		st.write("Unknown data format for input data table. Try Word (.docx) or OpenOffice (.odt).")
 
-	
-	#df = pd.read_excel(uploaded_file, header=None)
-	#st.dataframe(df)
-
 ########################################################################
 # Collect all ID numbers and answers
 answers = read_functions.search_words(df)
-
 
 # Question IDs
 qids = list(answers.keys())
@@ -53,9 +47,8 @@ qids = list(answers.keys())
 exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
 ename = exception_file.name
 st.write("Uploaded exception file: ", ename)
-if exception_file:
-	st.write("Uploaded exception file: ", ename)
-if uploaded_file is not None:
+
+if uploaded_file:
 	# Read the file as bytes
 	file_contents = exception_file.read()
 
