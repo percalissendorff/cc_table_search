@@ -27,6 +27,7 @@ if uploaded_file is not None:
 	if ".docx" in uploaded_file:
 		df = read_functions.read_docx(uploaded_file)
 	elif ".odt" in uploaded_file:
+		print("We made it this far")
 		df = pd.read_excel(uploaded_file, header=None)
 	elif ".pdf" in uploaded_file:
 		df = read_functions.read_pdf(uploaded_file)
@@ -35,7 +36,7 @@ if uploaded_file is not None:
 
 	
 	#df = pd.read_excel(uploaded_file, header=None)
-	st.dataframe(df)
+	#st.dataframe(df)
 
 ########################################################################
 
