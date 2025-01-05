@@ -3,3 +3,4 @@ pandas
 numpy
 pypdfium2
 python-docx
+odfpy
