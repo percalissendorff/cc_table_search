@@ -13,6 +13,7 @@ import pandas as pd
 import pypdfium2 as pdfium
 import docx
 import sys
+import read_functions
 import streamlit as st
 from streamlit import session_state
 # ---------------------------------------------------------------------
