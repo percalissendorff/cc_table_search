@@ -20,7 +20,7 @@ from streamlit import session_state
 # Define files
 
 #fname = '/home/per/Dropbox/Blandat/test_document_for_pancakedevil_onecol.odt'
-uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.Testing to break Line for easier overview of Text!", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
+uploaded_file = st.file_uploader("Upload your table here.", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
 st.write("Uploaded file: "+fname)
@@ -44,7 +44,7 @@ answers = read_functions.search_words(df)
 qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
-exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
+exception_file = st.file_uploader("Upload your exceptions here, or ignore for default.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
 ename = exception_file.name
 st.write("Uploaded exception file: ", ename)
 
