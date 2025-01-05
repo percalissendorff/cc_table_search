@@ -62,6 +62,9 @@ else:
 	with open('default_exceptions.dat','r') as f:
 		exceps = [line.strip() for line in f]
 
+st.write("exceptions: ")
+st.write(exceps)
+
 
 # Save flagged words and id
 flagged_word = []
