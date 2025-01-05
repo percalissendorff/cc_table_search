@@ -35,7 +35,7 @@ if uploaded_file is not None:
 
 	
 	#df = pd.read_excel(uploaded_file, header=None)
-	#st.dataframe(df)
+	st.dataframe(df)
 
 ########################################################################
 
