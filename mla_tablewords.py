@@ -51,8 +51,8 @@ qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
 exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
-#ename = exception_file.name
-#st.write("Uploaded exception file: ", ename)
+ename = exception_file
+st.write("Uploaded exception file: ", ename)
 if exception_file:
 	#st.write("Uploaded exception file: ", ename)
 	st.write("Successfully uploaded exception file")
