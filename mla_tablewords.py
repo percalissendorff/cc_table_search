@@ -25,11 +25,11 @@ uploaded_file = st.file_uploader("Upload your table here, should be .odt file fo
 if uploaded_file is not None:
 	# Read file
 	if ".docx" in uploaded_file:
-		df = read_functions_mla.read_docx(uploaded_file)
+		df = read_functions.read_docx(uploaded_file)
 	elif ".odt" in uploaded_file:
 		df = pd.read_excel(uploaded_file, header=None)
 	elif ".pdf" in uploaded_file:
-		df = read_functions_mla.read_pdf(uploaded_file)
+		df = read_functions.read_pdf(uploaded_file)
 	else:
 		print("Unknown data format for input data table. Try Word (.docx) or OpenOffice (.odt).")
 
