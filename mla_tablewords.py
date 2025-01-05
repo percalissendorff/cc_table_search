@@ -23,55 +23,40 @@ from streamlit import session_state
 uploaded_file = st.file_uploader("Upload your table here, should be .odt file for now.", type='odt', accept_multiple_files=False, key="up1")
 
 if uploaded_file is not None:
-	df = pd.read_excel(uploaded_file, header=None)
-	st.dataframe(df)
+	# Read file
+	if ".docx" in fname:
+		df = read_functions_mla.read_docx(uploaded_file)
+	elif ".odt" in fname:
+		df = pd.read_excel(uploaded_file, header=None)
+	elif ".pdf" in fname:
+		df = read_functions_mla.read_pdf(uploaded_file)
+	else:
+		print("Unknown data format for input data table. Try Word (.docx) or OpenOffice (.odt).")
 
-
-# Make dictionary 
-def search_answers(df):
-	Q = {}
-	for index, row in df.iterrows():
-		# Step through rows in table
-		# ~ answers = []
-		for column in df.columns:
-			value = str(row[column])
-			# Save ID
-			if "ID" in value:
-				current_ID = value
-				answers = []	# Save all four answers in one list
-				continue		# skip to next row
-			
-			# Find and save answers
-			if ")" in value:
-				# ~ split_answer_row = value.split()[1:]
-				# ~ answer = ' '.join(split_answer_row)
-				# ~ answers.append(answer.casefold())	# Ensure answer is all lower case
-				answers.append(value[3:].casefold())
-			if len(answers) == 4:
-				Q.update({current_ID : answers})
-			if "4)" in value:			
-				continue				# skip to next row		
 	
-	return Q
-			
-
+	#df = pd.read_excel(uploaded_file, header=None)
+	st.dataframe(df)
 
 ########################################################################
 
 
 
 # Collect all ID numbers and answers
-answers = search_answers(df)
+answers = read_functions.search_answers(df)
 
 
 # Question IDs
 qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
-exceps = ["a", "to", "the", "of", "in", "are", "is", "at", "by", "on", \
-	"with", "as", "for", "from", "about", "because", "can't", "don't", \
-	" can ", " do ", " will ", " all ", " up ",	"there", "this", "then",\
-	"them", "they", "their", "those", "and"]
+exception_file = st.file_uploader("Upload your exceptions here, should be .txt file containing a list for now.", type='txt', accept_multiple_files=False, key="up2")
+if uploaded_file is not None:
+	with open(exception_file, 'r') as f:
+		exceps = [line.strip() for line in f]
+else:
+	with open('default_exceptions.dat', 'r') as f:
+		exceps = [line.strip() for line in f]
+
 
 # Save flagged words and id
 flagged_word = []
