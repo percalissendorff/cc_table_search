@@ -42,7 +42,7 @@ if uploaded_file is not None:
 
 
 # Collect all ID numbers and answers
-answers = read_functions.search_answers(df)
+answers = read_functions.search_words(df)
 
 
 # Question IDs
