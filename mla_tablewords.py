@@ -5,7 +5,8 @@
 	Script to read and examine .odt files similar to word-documents
 	containing tables, flagging multiple of the same entries as answers.
 	"""
-	
+last_update = '05-jan-2025'
+
 # ---------------------------------------------------------------------
 # Load modules
 import numpy as np
@@ -20,7 +21,9 @@ from streamlit import session_state
 # Initiating user friendly stuff
 st.title("Table search multiples")
 
-
+st.write("Description:")
+st.write("App to check an input table of questions and answers for multiple instances of the same words. The app is written to search both questions and answers for multiples. This application was written for fun, as well as a way to learn coding with streamlit.app, and contains several undefined bugs. Use with caution. The code is imperfect and somewhat stupid, and should not be confused with any form of AI, nor should it replace human interaction with identifying mutliple occurrences in the tables.")
+st.write("Last update: ", last_update)
 
 
 # ---------------------------------------------------------------------
