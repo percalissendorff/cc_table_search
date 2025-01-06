@@ -20,8 +20,6 @@ from streamlit import session_state
 # ---------------------------------------------------------------------
 # Initiating user friendly stuff
 st.title("Table search multiples")
-
-st.write("Description:")
 st.write("App to check an input table of questions and answers for multiple instances of the same words. The app is written to search both questions and answers for multiples. This application was written for fun, as well as a way to learn coding with streamlit.app, and contains several undefined bugs. Use with caution. The code is imperfect and somewhat stupid, and should not be confused with any form of AI, nor should it replace human interaction with identifying mutliple occurrences in the tables.")
 st.write("Last update: ", last_update)
 
@@ -35,6 +33,7 @@ st.write("The ID row should have the phrase 'ID' in it.")
 st.write("The question row should have the word 'Question' in it.")
 st.write("The answer rows should be numbered, with right paranthesis after the numbers, as 1), 2), 3) and 4).")
 st.write("The code is case insensitive, and will flag the same word regardless if it is in caps or lower case letters.")
+st.write("The code does not handle images! Try to keep the input table structure the same as in the example below.")
 st.write("The current version of the code works for Word (.docx), open office (.odt), and PDF (.pdf) files.")
 
 st.write("An example of how a table may look like is presented below, followed by a description of the code output.")
