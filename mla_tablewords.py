@@ -26,7 +26,7 @@ st.title("Table search multiples")
 # ---------------------------------------------------------------------
 
 # Define files
-st.sub_header("Input table")
+st.subheader("Input table")
 uploaded_file = st.file_uploader("Upload your table here.", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
@@ -51,7 +51,7 @@ answers = read_functions.search_words(df)
 qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
-st.sub_header("Exceptions")
+st.subheader("Exceptions")
 st.write("Below you can upload a text file containing words that should be excepted from the search. If you do not have one, you can just leave the upload empty and the code will take a default list of common words, such as prepositions, and ignore them for the multiple instance search.")
 st.write("The exception list should be either .txt or .dat format, and the structure can be a single column of words.")
 st.write("The current version is not smart, and does not recognise different grammatical uses or pluralisations of the same word. You will need to add all instances of the word")
@@ -121,7 +121,7 @@ for i in range(0, len(qids)-1):
 
 
 # Display the results
-st.sub_header("Flagged words and corresponding question IDs: ")
+st.subheader("Flagged words and corresponding question IDs: ")
 for key, val in flagged.items():
 	st.write(key, ":", val)
 
