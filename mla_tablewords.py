@@ -32,7 +32,7 @@ st.write("The ID row should have the phrase 'ID' in it.")
 st.write("The question row should have the word 'Question' in it.")
 st.write("The answer rows should be numbered, with right paranthesis after the numbers, as 1), 2), 3) and 4).")
 st.write("The code is case insensitive, and will flag the same word regardless if it is in caps or lower case letters.")
-st.write("The current version of the code should be able to handle Word (.docx), open office (.odt), and PDF (.pdf) files.")
+st.write("The current version of the code works for Word (.docx), open office (.odt), and PDF (.pdf) files.")
 
 st.write("An example of how a table may look like is presented below, followed by a description of the code output.")
 
