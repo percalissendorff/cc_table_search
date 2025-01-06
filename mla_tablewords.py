@@ -27,6 +27,11 @@ st.title("Table search multiples")
 
 # Define files
 st.subheader("Input table")
+st.write("Input table should be a single column, formatted to have one row for question id, one row for the question, followed by a number of rows corresponding to answers.")
+st.write("The ID row should have the phrase 'ID' in it.")
+st.write("The question row should have the word 'Question' in it.")
+st.write("The answer rows should be numbered, with right paranthesis after the numbers, as 1), 2), 3) and 4).")
+st.write("The current version of the code should be able to handle Word (.docx), open office (.odt), and PDF (.pdf) files.")
 uploaded_file = st.file_uploader("Upload your table here.", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
