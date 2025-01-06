@@ -31,7 +31,15 @@ st.write("Input table should be a single column, formatted to have one row for q
 st.write("The ID row should have the phrase 'ID' in it.")
 st.write("The question row should have the word 'Question' in it.")
 st.write("The answer rows should be numbered, with right paranthesis after the numbers, as 1), 2), 3) and 4).")
+st.write("The code is case insensitive, and will flag the same word regardless if it is in caps or lower case letters.")
 st.write("The current version of the code should be able to handle Word (.docx), open office (.odt), and PDF (.pdf) files.")
+
+st.write("An example of how a table may look like is presented below, followed by a description of the code output.")
+
+st.image("table_example.png", caption="Example input table structure. In this example, the code will flag the word [Grey], as it appears in both questions. The code will NOT identify the word [color] and [colour] as multiples, because of their different spelling.")
+
+
+
 uploaded_file = st.file_uploader("Upload your table here.", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
