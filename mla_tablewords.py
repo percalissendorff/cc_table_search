@@ -17,9 +17,16 @@ import read_functions
 import streamlit as st
 from streamlit import session_state
 # ---------------------------------------------------------------------
-# Define files
+# Initiating user friendly stuff
+st.title("Table search multiples")
 
-#fname = '/home/per/Dropbox/Blandat/test_document_for_pancakedevil_onecol.odt'
+
+
+
+# ---------------------------------------------------------------------
+
+# Define files
+st.sub_header("Input table")
 uploaded_file = st.file_uploader("Upload your table here.", type=['odt', 'docx', 'pdf'], accept_multiple_files=False, key="up1")
 
 fname = uploaded_file.name
@@ -44,7 +51,12 @@ answers = read_functions.search_words(df)
 qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
-exception_file = st.file_uploader("Upload your exceptions here, or ignore for default.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
+st.sub_header("Exceptions")
+st.write("Below you can upload a text file containing words that should be excepted from the search. If you do not have one, you can just leave the upload empty and the code will take a default list of common words, such as prepositions, and ignore them for the multiple instance search.")
+st.write("The exception list should be either .txt or .dat format, and the structure can be a single column of words.")
+st.write("The current version is not smart, and does not recognise different grammatical uses or pluralisations of the same word. You will need to add all instances of the word")
+
+exception_file = st.file_uploader("Upload your list of exceptions here.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
 
 if exception_file:
 	ename = exception_file.name
@@ -109,7 +121,7 @@ for i in range(0, len(qids)-1):
 
 
 # Display the results
-st.write("Flagged words and corresponding question IDs: ")
+st.sub_header("Flagged words and corresponding question IDs: ")
 for key, val in flagged.items():
 	st.write(key, ":", val)
 
