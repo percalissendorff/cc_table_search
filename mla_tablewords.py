@@ -136,7 +136,7 @@ for i in range(0, len(qids)-1):
 # Display the results
 st.subheader("Flagged words and corresponding question IDs: ")
 for key, val in flagged.items():
-	st.write(key, ":", val)
+	st.write(key+1, ":", val)
 
 
 
