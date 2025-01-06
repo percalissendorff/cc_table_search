@@ -36,7 +36,7 @@ st.write("The current version of the code should be able to handle Word (.docx),
 
 st.write("An example of how a table may look like is presented below, followed by a description of the code output.")
 
-st.image("table_example.png", caption="Example input table structure. In this example, the code will flag the word [Grey], as it appears in both questions. The code will NOT identify the word [color] and [colour] as multiples, because of their different spelling.")
+st.image("table_example.png", width=400, caption="Example input table structure. In this example, the code will flag the word [Grey], as it appears in both questions. The code will NOT identify the word [color] and [colour] as multiples, because of their different spelling.")
 
 
 
