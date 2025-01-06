@@ -67,9 +67,8 @@ qids = list(answers.keys())
 
 # Make exceptions. Could import a list from separate docutment instead
 st.subheader("Exceptions")
-st.write("Below you can upload a text file containing words that should be excepted from the search. If you do not have one, you can just leave the upload empty and the code will take a default list of common words, such as prepositions, and ignore them for the multiple instance search.")
-st.write("The exception list should be either .txt or .dat format, and the structure can be a single column of words.")
-st.write("The current version is not smart, and does not recognise different grammatical uses or pluralisations of the same word. You will need to add all instances of the word")
+st.write("Below you can upload a text file (.txt, .dat) containing words that should be excepted from the search. If you do not have one, you can just leave the upload empty and the code will take a default list of common words, such as prepositions, and ignore them for the multiple instance search.")
+st.write("The structure of the exception list should be a single column of words. This current version of the code is not smart, and does not recognise different grammatical variations or pluralisations of the same word.")
 
 exception_file = st.file_uploader("Upload your list of exceptions here.", type=['txt', 'dat'], accept_multiple_files=False, key="up2")
 
